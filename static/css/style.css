@@ -1,0 +1,25 @@
+
+
+.plants-container{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.plants-container .card{
+    width: 18%;
+    margin-left: 20px;
+
+}
+
+plant-container .card{
+    width: 50%;
+}
+
+.custom-menu-items{
+    display: flex;
+    justify-content: space-between;
+}
+
+.user{
+    margin-right: 15px;
+}

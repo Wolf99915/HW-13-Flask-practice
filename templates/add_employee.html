@@ -1,0 +1,30 @@
+{% include "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <form {% if employee %} action="\update-employee\{{ employee.id }}" {% else %} action="/save-employee" {% endif %} method="POST">
+            <div class="mb-3">
+              <label for="first_name" class="form-label">First name:</label>
+              <input type="text" name="first_name" class="form-control" {% if employee %} value="{{ employee.first_name }}" {% endif %} id="first_name" placeholder="first_name">
+            </div>
+            <div class="mb-3">
+              <label for="last_name" class="form-label">Last name:</label>
+              <input type="text" name="last_name" class="form-control" {% if employee %} value="{{ employee.last_name }}" {% endif %} id="last_name" placeholder="first_name">
+
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">@</span>
+              <input type="text" name="email" class="form-control" {% if employee %} value="{{ employee.email }}" {% endif %} id="email" placeholder="email">
+            </div>
+            <select class="form-select" name="plant_id" {% if employee %} value="{{ employee.plant.id }}" {% endif %} aria-label="multiple select example">
+              {% for plant in plants %}
+                <option value="{{ plant.id }}">{{ plant.title }}</option>
+              {% endfor %}
+            </select>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">Submit</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

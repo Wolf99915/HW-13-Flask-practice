@@ -1,0 +1,45 @@
+{% include "base.html" %}
+    {% block additional_styles %}
+     <link href="/static/css/sign_up.css" rel="stylesheet">
+    {% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card">
+                <h2 class="card-title text-center">Sign up</h2>
+                <div class="card-body py-md-4">
+                    <form action="/sign-up" method="POST">
+                        {% if error %}
+                            <h5 class="active" style="color:red"> {{ error }} </h5>
+                        {% endif %}
+                        <div class="form-group">
+                            <input type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Last Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" required name="username" class="form-control" id="username" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" required name="email" class="form-control" id="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+<!--                        <div class="form-group">-->
+<!--                            <input type="password" class="form-control" id="confirm-password"-->
+<!--                                   placeholder="confirm-password">-->
+<!--                        </div>-->
+                        <div class="d-flex flex-row align-items-center justify-content-between">
+                            <a href="/sign-in">Login</a>
+                            <button type="submit" class="btn btn-primary">Create Account</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

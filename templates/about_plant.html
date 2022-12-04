@@ -1,0 +1,17 @@
+{% include "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="text-center">Plant details</h1>
+        <div class="plant-container">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><b>Plant name: </b> {{ plant.title }}</h5>
+                    <p class="card-subtitle mb-2"><b>Plant location: </b> {{ plant.location }}</p>
+                    <p class="card-subtitle mb-2"><b>id: </b> {{ plant.id }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
